@@ -5,16 +5,14 @@ import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 const links = [
   { href: '/', label: 'Home', selected: true},
   { href: '/wedding', label: 'Wedding' },
-  { href: '/travel', label: 'Travel' },
-  { href: '/photos', label: 'Photos' },
-  { href: '/registry', label: 'Registry'},
+  { href: 'https://www.myregistry.com/wedding-registry/virginia-chu-and-nate-tinkler-atlanta-ga/2256701', label: 'Registry'},
   { href: '/rsvp', label: 'RSVP'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
 
-const Header = (props) => (
+const Layout = (props) => (
   <div className="canvas">
     <header className="header-class">
       <h1 className="names">
@@ -25,7 +23,7 @@ const Header = (props) => (
         <ul>
           {links.map(({ key, href, label, selected }) => (
             <li key={key}>
-              <a href={href} className={selected ? "selected" : ""}>{label}</a>
+              <a href={href} className={props.selected === label ? "selected" : ""}>{label}</a>
             </li>
           ))}
         </ul>
@@ -48,10 +46,10 @@ const Header = (props) => (
     .canvas {
       background-color: white;
       border-width: 2px;
-      margin: 100px auto;
+      margin: 70px auto;
       border-style: solid;
       border-color: #eee;
-      padding: 100px 100px 0;
+      padding: 30px 100px 0;
       max-width: 800px;
     }
 
@@ -118,4 +116,4 @@ const Header = (props) => (
 
 )
 
-export default Header
+export default Layout

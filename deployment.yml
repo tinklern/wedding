@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wedding-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wedding-web
+  template:
+    metadata:
+      labels:
+        app: wedding-web
+    spec:
+      containers:
+      - name: wedding-web
+        image: gcr.io/cultivariety/wedding-app:latest
+        ports:
+        - containerPort: 3000

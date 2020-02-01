@@ -2,37 +2,46 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout/layout'
 
-const Home = () => (
-  <div>
-    <Layout selected="Home">
-      <div className="portrait">
-        <img src="/portrait.png"></img>
-      </div>
+export default class RSVP extends React.Component {
+
+  
+  render() {
+    return (
+      <div>
+    <Layout selected="Wedding">
       <div className="bounds">
-        <div className="section text-section context">
-          COME CELEBRATE OUR WEDDING!
+        <div className="section text-section header">
+          Where : Monday Night Garage
         </div>
         <div className="line">
           <hr></hr>
         </div>
 
-        <div className="section text-section header">
-          Virginia Mildred Chu
-        </div>
         <div className="section text-section context">
-          - <em>AND</em> -
+           933 Lee St
+           <br/>Monday Night Garage is a fun tasting spot for locally brewed Monday Night beer. 
+           <br/>We will be dancing and dining in a private section of this space.
         </div>
+        
         <div className="section text-section header">
-          Nathaniel Allen Tinkler
+        When : April 11th, 2020
         </div>
         <div className="line">
           <hr></hr>
         </div>
         <div className="section text-section context">
-          Saturday, April 11th, 2020
+          Come join us Saturday, April 11th! Drinks and hors d'oeurves at 6pm, dinner at 6:45pm, party until 9pm.
         </div>
-        <div className="section text-section paragraph">
-            <em>Virginia and Nate joyfully request the pleasure of your company as we celebrate our marriage.</em>
+        <div className="section text-section header">
+        What : Drinks, Dinner and Dancing
+        </div>
+        <div className="line">
+          <hr></hr>
+        </div>
+        <div className="section text-section context">
+          Drinks: Several Monday Night Brewing beers will be on tap along with wine and cocktails.
+          <br/> Dinner: A buffet of barbeque and sides from Sweet Auburn BBQ.
+          <br/>Dancing: We hope you will get out on the dance floor with us. Don't forget to add your favorite boogie song with your RSVP!
         </div>
       </div>
 
@@ -49,11 +58,6 @@ const Home = () => (
 
       .portrait {
         margin-bottom: 34px;
-      }
-
-      .portrait img {
-        max-width: 800px;
-        height: auto;
       }
 
       .footer .section.context {
@@ -75,7 +79,6 @@ const Home = () => (
         text-decoration-line: none;
         text-decoration-style: solid;
         text-size-adjust: 100%;
-        text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 20px;
         font-style: normal;
@@ -116,6 +119,6 @@ const Home = () => (
       `}</style>
     </Layout>
   </div>
-)
-
-export default Home
+    )
+  }
+}
